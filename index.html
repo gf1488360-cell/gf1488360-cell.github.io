@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghulam Farid Ibtisam | Data Scientist & Business Consultant</title>
+    <style>
+        /* === GLOBAL STYLES === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #0a192f;
+            color: #ccd6f6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border: 1px solid #64ffda;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background: #64ffda;
+            color: #0a192f;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #64ffda;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(100, 255, 218, 0.3);
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #64ffda, #00a8cc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .professional-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #8892b0;
+        }
+
+        .brand-pillars {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+
+        .pillar {
+            text-align: center;
+            padding: 20px;
+            background: rgba(100, 255, 218, 0.1);
+            border-radius: 10px;
+            border: 1px solid #64ffda;
+            min-width: 150px;
+        }
+
+        .pillar-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .pillar-title {
+            color: #64ffda;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .pillar-desc {
+            color: #8892b0;
+            font-size: 0.9rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        /* === PILLARS SECTION === */
+        .pillars-section {
+            background: #112240;
+            text-align: center;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #64ffda;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .pillar-card {
+            background: #0a192f;
+            padding: 50px 30px;
+            border-radius: 10px;
+            border: 1px solid #233554;
+            transition: transform 0.3s ease;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-10px);
+            border-color: #64ffda;
+        }
+
+        .pillar-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #64ffda;
+        }
+
+        .pillar-card p {
+            color: #8892b0;
+            font-size: 1.1rem;
+        }
+
+        /* === ENTJ ADVANTAGE === */
+        .entj-section {
+            background: #0a192f;
+        }
+
+        .strengths-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .strength-card {
+            background: #112240;
+            padding: 40px 30px;
+            border-radius: 10px;
+            border-left: 4px solid #64ffda;
+        }
+
+        .strength-card h3 {
+            color: #64ffda;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .strength-card p {
+            color: #8892b0;
+        }
+
+        /* === PROJECTS SECTION === */
+        .projects-section {
+            background: #112240;
+        }
+
+        .project-card {
+            background: #0a192f;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 4px solid #64ffda;
+        }
+
+        .project-card h3 {
+            color: #ccd6f6;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tech-tag {
+            background: #233554;
+            color: #64ffda;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        /* === SKILLS SECTION === */
+        .skills-section {
+            background: #0a192f;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-category h3 {
+            color: #64ffda;
+            margin-bottom: 1rem;
+        }
+
+        .skill-bar {
+            background: #112240;
+            height: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .skill-level {
+            background: #64ffda;
+            height: 100%;
+            border-radius: 5px;
+        }
+
+        .skill-name {
+            color: #8892b0;
+            font-size: 0.9rem;
+        }
+
+        /* === RESPONSIVE DESIGN === */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .professional-title {
+                font-size: 1.5rem;
+            }
+            
+            .brand-pillars {
+                gap: 15px;
+            }
+            
+            .pillar {
+                min-width: 120px;
+                padding: 15px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Ghulam Farid Ibtisam</h1>
+            <div class="professional-title">Data Scientist & Business Consultant</div>
+            
+            <div class="brand-pillars">
+                <div class="pillar">
+                    <div class="pillar-icon">🔮</div>
+                    <div class="pillar-title">Vision</div>
+                    <div class="pillar-desc">Strategic Insight</div>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-icon">🧠</div>
+                    <div class="pillar-title">Logic</div>
+                    <div class="pillar-desc">Analytical Precision</div>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-icon">⚡</div>
+                    <div class="pillar-title">Implementation</div>
+                    <div class="pillar-desc">Results-Driven</div>
+                </div>
+            </div>
+            
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">View My Projects</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PILLARS SECTION -->
+    <section class="pillars-section">
+        <div class="container">
+            <h2 class="section-title">My Professional Philosophy</h2>
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <h3>🔮 Vision</h3>
+                    <p>Seeing beyond the data to identify strategic opportunities and future trends. I focus on the big picture to align data initiatives with business objectives and long-term growth.</p>
+                </div>
+                <div class="pillar-card">
+                    <h3>🧠 Logic</h3>
+                    <p>Applying rigorous analytical thinking and statistical methods to ensure data-driven decisions. Every insight is backed by solid evidence and methodological precision.</p>
+                </div>
+                <div class="pillar-card">
+                    <h3>⚡ Implementation</h3>
+                    <p>Transforming insights into actionable solutions that deliver measurable business value. From concept to deployment, I ensure robust and scalable implementations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ENTJ ADVANTAGE -->
+    <section class="entj-section">
+        <div class="container">
+            <h2 class="section-title">The Strategic Advantage</h2>
+            <div class="strengths-grid">
+                <div class="strength-card">
+                    <h3>🎯 Visionary Leadership</h3>
+                    <p>Natural ability to see patterns and opportunities in complex data environments, driving strategic business decisions.</p>
+                </div>
+                <div class="strength-card">
+                    <h3>⚡ Efficient Execution</h3>
+                    <p>Transforming data insights into actionable business strategies with precision and speed.</p>
+                </div>
+                <div class="strength-card">
+                    <h3>📊 Data-Driven Decisions</h3>
+                    <p>Basing strategic recommendations on empirical evidence and rigorous analysis.</p>
+                </div>
+                <div class="strength-card">
+                    <h3>🔍 Systematic Analysis</h3>
+                    <p>Breaking down complex problems into manageable components for effective solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2 class="section-title">Data Science Projects</h2>
+            
+            <div class="project-card">
+                <h3>Loan Default Prediction System</h3>
+                <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Machine Learning</span>
+                    <span class="tech-tag">Scikit-learn</span>
+                    <span class="tech-tag">Pandas</span>
+                    <span class="tech-tag">SQL</span>
+                </div>
+                <p><strong>Business Problem:</strong> Reducing financial losses from loan defaults through predictive analytics.</p>
+                <p><strong>Solution:</strong> Built Random Forest classifier achieving 87% accuracy in identifying high-risk applicants.</p>
+                <p><strong>Impact:</strong> Potential 25% reduction in bad loans through better risk assessment.</p>
+                <div class="project-links">
+                    <a href="#" class="btn btn-secondary">View Code</a>
+                    <a href="#" class="btn btn-secondary">Case Study</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>Customer Segmentation Platform</h3>
+                <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">K-means Clustering</span>
+                    <span class="tech-tag">Tableau</span>
+                    <span class="tech-tag">Power BI</span>
+                </div>
+                <p><strong>Business Problem:</strong> Identifying customer segments for targeted marketing campaigns.</p>
+                <p><strong>Solution:</strong> Applied clustering algorithms to segment 10,000+ customers into 5 distinct groups.</p>
+                <p><strong>Impact:</strong> Enabled personalized marketing with 30% higher conversion rates.</p>
+                <div class="project-links">
+                    <a href="#" class="btn btn-secondary">View Code</a>
+                    <a href="#" class="btn btn-secondary">Live Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section class="skills-section">
+        <div class="container">
+            <h2 class="section-title">Technical Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Data Analysis</h3>
+                    <div class="skill-item">
+                        <div class="skill-bar"><div class="skill-level" style="width: 90%;"></div></div>
+                        <div class="skill-name">Python, Pandas, NumPy</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-bar"><div class="skill-level" style="width: 85%;"></div></div>
+                        <div class="skill-name">SQL & Database Management</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-bar"><div class="skill-level" style="width: 80%;"></div></div>
+                        <div class="skill-name">Statistical Analysis</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Machine Learning</h3>
+                    <div class="skill-item">
+                        <div class="skill-bar"><div class="skill-level" style="width: 85%;"></div></div>
+                        <div class="skill-name">Scikit-learn</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-bar"><div class="skill-level" style="width: 75%;"></div></div>
+                        <div class="skill-name">TensorFlow</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-bar"><div class="skill-level" style="width: 80%;"></div></div>
+                        <div class="skill-name">Model Deployment</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Business Intelligence</h3>
+                    <div class="skill-item">
+                        <div class="skill-bar"><div class="skill-level" style="width: 88%;"></div></div>
+                        <div class="skill-name">Tableau & Power BI</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-bar"><div class="skill-level" style="width: 82%;"></div></div>
+                        <div class="skill-name">Dashboard Design</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-bar"><div class="skill-level" style="width: 85%;"></div></div>
+                        <div class="skill-name">Business Strategy</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" style="background: #112240; padding: 80px 0; text-align: center;">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <p style="color: #8892b0; font-size: 1.2rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Ready to transform your data into strategic business advantages?
+            </p>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="mailto:your.email@example.com" class="btn btn-primary">Send Email</a>
+                <a href="https://linkedin.com/in/yourprofile" class="btn btn-secondary">LinkedIn</a>
+                <a href="https://github.com/yourusername" class="btn btn-secondary">GitHub</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
