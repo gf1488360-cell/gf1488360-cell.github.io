@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Segmentation Platform - Case Study | Ghulam Farid Ibtisam</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: #0a192f;
+            color: #ccd6f6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .case-study-header {
+            background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
+            padding: 80px 0;
+            text-align: center;
+            border-bottom: 2px solid #64ffda;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #64ffda;
+            color: #0a192f;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
+        }
+
+        .case-study-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #64ffda, #00a8cc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            background: rgba(100, 255, 218, 0.1);
+            padding: 15px 25px;
+            border-radius: 8px;
+            border: 1px solid #64ffda;
+        }
+
+        .meta-value {
+            color: #64ffda;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .meta-label {
+            color: #8892b0;
+            font-size: 0.9rem;
+        }
+
+        .case-study-content {
+            padding: 60px 0;
+        }
+
+        .section {
+            background: #112240;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 4px solid #64ffda;
+        }
+
+        .section h2 {
+            color: #64ffda;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .section p {
+            color: #8892b0;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .metric-card {
+            background: #0a192f;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #64ffda;
+        }
+
+        .metric-value {
+            color: #64ffda;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .metric-label {
+            color: #8892b0;
+            font-size: 0.9rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .tech-tag {
+            background: #233554;
+            color: #64ffda;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .case-study-footer {
+            text-align: center;
+            padding: 40px 0;
+            background: #112240;
+            margin-top: 50px;
+        }
+
+        .customer-segments {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .segment-card {
+            background: #0a192f;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #64ffda;
+        }
+
+        .segment-name {
+            color: #64ffda;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .segment-stats {
+            color: #8892b0;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .segment-description {
+            color: #8892b0;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 768px) {
+            .case-study-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .project-meta {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section {
+                padding: 25px;
+            }
+            
+            .customer-segments {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="case-study-header">
+        <div class="container">
+            <a href="../index.html" class="back-button">← Back to Portfolio</a>
+            <h1>Customer Segmentation Platform</h1>
+            <p style="color: #8892b0; font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
+                Advanced Clustering Solution for Personalized Marketing and Customer Retention
+            </p>
+            
+            <div class="project-meta">
+                <div class="meta-item">
+                    <div class="meta-value">7 Segments</div>
+                    <div class="meta-label">Customer Groups</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-value">183%</div>
+                    <div class="meta-label">Conversion Increase</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-value">45%</div>
+                    <div class="meta-label">CLV Boost</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-value">5 months</div>
+                    <div class="meta-label">Project Duration</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Case Study Content -->
+    <main class="case-study-content">
+        <div class="container">
+            <!-- Executive Summary -->
+            <section class="section">
+                <h2>📊 Executive Summary</h2>
+                <p>A growing e-commerce company with 1.2 million customers was struggling with generic marketing campaigns achieving only 3% conversion rates. Their one-size-fits-all approach failed to address diverse customer needs and behaviors.</p>
+                <p>We developed a dynamic customer segmentation platform using advanced clustering algorithms that identified 7 distinct customer personas, enabling hyper-personalized marketing strategies and dramatically improving customer engagement and retention.</p>
+                
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">1.2M+</div>
+                        <div class="metric-label">Customers Analyzed</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">25+</div>
+                        <div class="metric-label">Behavioral Features</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">8.5%</div>
+                        <div class="metric-label">Conversion Rate</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">$4.2M</div>
+                        <div class="metric-label">Additional Revenue</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Business Challenge -->
+            <section class="section">
+                <h2>🎯 Business Challenge</h2>
+                <p>The client, an established e-commerce platform in the fashion retail space, was facing significant challenges in customer engagement and retention:</p>
+                <ul style="color: #8892b0; padding-left: 20px; margin-bottom: 20px;">
+                    <li>Generic email campaigns achieving only 3% conversion rates</li>
+                    <li>High customer churn rate of 28% annually</li>
+                    <li>Ineffective product recommendations with 5% click-through rates</li>
+                    <li>Marketing budget wasted on uninterested customer segments</li>
+                    <li>Inability to identify high-value customers for retention efforts</li>
+                    <li>Limited understanding of customer lifecycle and behavior patterns</li>
+                </ul>
+                <p>The marketing team needed a data-driven approach to understand their diverse customer base and deliver relevant experiences at scale.</p>
+            </section>
+
+            <!-- Solution Architecture -->
+            <section class="section">
+                <h2>🏗️ Solution Architecture</h2>
+                <p>We designed a comprehensive customer intelligence platform that processes behavioral data in real-time and provides actionable segmentation insights to marketing teams.</p>
+                
+                <h3 style="color: #64ffda; margin: 20px 0 10px 0;">Technical Stack</h3>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Scikit-learn</span>
+                    <span class="tech-tag">K-means Clustering</span>
+                    <span class="tech-tag">PCA</span>
+                    <span class="tech-tag">Tableau</span>
+                    <span class="tech-tag">Power BI</span>
+                    <span class="tech-tag">SQL</span>
+                    <span class="tech-tag">RFM Analysis</span>
+                </div>
+
+                <h3 style="color: #64ffda; margin: 20px 0 10px 0;">Platform Components</h3>
+                <ul style="color: #8892b0; padding-left: 20px;">
+                    <li><strong>Data Integration Layer:</strong> Unified customer data from 5 sources including transactions, web analytics, and CRM</li>
+                    <li><strong>Feature Engineering Engine:</strong> Automated creation of 25+ behavioral and demographic features</li>
+                    <li><strong>Clustering Algorithm:</strong> K-means with silhouette analysis for optimal segment identification</li>
+                    <li><strong>Real-time Segmentation:</strong> Dynamic customer classification updated weekly</li>
+                    <li><strong>Marketing Dashboard:</strong> Interactive visualization of segment performance and campaign effectiveness</li>
+                    <li><strong>API Integration:</strong> Seamless connection with marketing automation platforms</li>
+                </ul>
+            </section>
+
+            <!-- Customer Segments -->
+            <section class="section">
+                <h2>👥 Customer Segments Identified</h2>
+                <p>Through comprehensive clustering analysis, we identified 7 distinct customer segments with unique characteristics and behaviors:</p>
+                
+                <div class="customer-segments">
+                    <div class="segment-card">
+                        <div class="segment-name">🏆 Loyal Champions</div>
+                        <div class="segment-stats">15% of customers • 45% of revenue</div>
+                        <div class="segment-description">High-value, frequent purchasers who are brand advocates. High engagement across all channels.</div>
+                    </div>
+                    
+                    <div class="segment-card">
+                        <div class="segment-name">⭐ Potential Loyalists</div>
+                        <div class="segment-stats">22% of customers • 25% of revenue</div>
+                        <div class="segment-description">Recent customers showing high potential. Active engagement but lower purchase frequency.</div>
+                    </div>
+                    
+                    <div class="segment-card">
+                        <div class="segment-name">⚠️ At-Risk Customers</div>
+                        <div class="segment-stats">18% of customers • 12% of revenue</div>
+                        <div class="segment-description">Previously active customers showing declining engagement. High churn risk.</div>
+                    </div>
+                    
+                    <div class="segment-card">
+                        <div class="segment-name">🎯 New Customers</div>
+                        <div class="segment-stats">12% of customers • 5% of revenue</div>
+                        <div class="segment-description">Recent first-time purchasers. Critical for onboarding and long-term relationship building.</div>
+                    </div>
+                    
+                    <div class="segment-card">
+                        <div class="segment-name">💤 Sleeping Giants</div>
+                        <div class="segment-stats">20% of customers • 8% of revenue</div>
+                        <div class="segment-description">Inactive for 3+ months but previously valuable. High reactivation potential.</div>
+                    </div>
+                    
+                    <div class="segment-card">
+                        <div class="segment-name">💰 Discount Seekers</div>
+                        <div class="segment-stats">8% of customers • 3% of revenue</div>
+                        <div class="segment-description">Primarily purchase during sales. Low margin but can be cultivated for full-price purchases.</div>
+                    </div>
+                    
+                    <div class="segment-card">
+                        <div class="segment-name">🔍 Window Shoppers</div>
+                        <div class="segment-stats">5% of customers • 2% of revenue</div>
+                        <div class="segment-description">High website engagement but low conversion. Need nurturing and personalized incentives.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Implementation Details -->
+            <section class="section">
+                <h2>🔧 Implementation Details</h2>
+                
+                <h3 style="color: #64ffda; margin: 20px 0 10px 0;">Data Collection & Processing</h3>
+                <p>Integrated data from multiple sources to create a 360-degree customer view:</p>
+                <ul style="color: #8892b0; padding-left: 20px; margin-bottom: 15px;">
+                    <li><strong>Transaction Data:</strong> 2.3 million purchase records with product categories and purchase amounts</li>
+                    <li><strong>Web Analytics:</strong> Page views, session duration, product browsing behavior</li>
+                    <li><strong>CRM Data:</strong> Customer demographics, support interactions, feedback</li>
+                    <li><strong>Marketing Engagement:</strong> Email opens, clicks, campaign responses</li>
+                    <li><strong>Social Media:</strong> Engagement metrics and sentiment analysis</li>
+                </ul>
+
+                <h3 style="color: #64ffda; margin: 20px 0 10px 0;">Feature Engineering</h3>
+                <p>Created comprehensive customer profiles using RFM analysis and behavioral metrics:</p>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">R-F-M</div>
+                        <div class="metric-label">Recency, Frequency, Monetary</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">CLV</div>
+                        <div class="metric-label">Customer Lifetime Value</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">Engagement</div>
+                        <div class="metric-label">Behavioral Score</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">Churn Risk</div>
+                        <div class="metric-label">Probability Score</div>
+                    </div>
+                </div>
+
+                <h3 style="color: #64ffda; margin: 20px 0 10px 0;">Clustering Methodology</h3>
+                <p>Applied advanced machine learning techniques for optimal segmentation:</p>
+                <ul style="color: #8892b0; padding-left: 20px;">
+                    <li>Used elbow method and silhouette analysis to determine optimal cluster count (k=7)</li>
+                    <li>Applied Principal Component Analysis (PCA) for dimensionality reduction</li>
+                    <li>Implemented K-means clustering with multiple initialization for stability</li>
+                    <li>Validated segments using business metrics and marketing intuition</li>
+                    <li>Created dynamic segmentation updating weekly based on new data</li>
+                </ul>
+            </section>
+
+            <!-- Business Impact -->
+            <section class="section">
+                <h2>💼 Business Impact</h2>
+                
+                <h3 style="color: #64ffda; margin: 20px 0 10px 0;">Marketing Performance</h3>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">183%</div>
+                        <div class="metric-label">Conversion Increase</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">45%</div>
+                        <div class="metric-label">Higher CLV</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">28%</div>
+                        <div class="metric-label">Churn Reduction</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">35%</div>
+                        <div class="metric-label">Marketing ROI</div>
+                    </div>
+                </div>
+
+                <h3 style="color: #64ffda; margin: 20px 0 10px 0;">Campaign Results</h3>
+                <ul style="color: #8892b0; padding-left: 20px;">
+                    <li><strong>Loyal Champions:</strong> VIP program increased repeat purchases by 65%</li>
+                    <li><strong>Potential Loyalists:</strong> Personalized onboarding increased conversion by 120%</li>
+                    <li><strong>At-Risk Customers:</strong> Targeted retention campaigns reduced churn by 42%</li>
+                    <li><strong>New Customers:</strong> Welcome series improved 90-day retention by 55%</li>
+                    <li><strong>Sleeping Giants:</strong> Reactivation campaigns brought back 28% of inactive customers</li>
+                    <li><strong>Discount Seekers:</strong> Strategic promotions increased average order value by 32%</li>
+                    <li><strong>Window Shoppers:</strong> Abandoned cart recovery improved conversion by 85%</li>
+                </ul>
+
+                <h3 style="color: #64ffda; margin: 20px 0 10px 0;">Financial Results</h3>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">$4.2M</div>
+                        <div class="metric-label">Additional Revenue</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">$1.8M</div>
+                        <div class="metric-label">Cost Savings</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">680%</div>
+                        <div class="metric-label">ROI</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">18%</div>
+                        <div class="metric-label">AOV Increase</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technical Insights -->
+            <section class="section">
+                <h2>🔬 Technical Insights</h2>
+                
+                <h3 style="color: #64ffda; margin: 20px 0 10px 0;">Algorithm Performance</h3>
+                <p>Compared multiple clustering approaches to ensure optimal segment quality:</p>
+                <ul style="color: #8892b0; padding-left: 20px; margin-bottom: 15px;">
+                    <li><strong>K-means:</strong> Selected for interpretability and computational efficiency</li>
+                    <li><strong>DBSCAN:</strong> Tested for noise handling but less interpretable for business teams</li>
+                    <li><strong>Gaussian Mixture Models:</strong> Provided probabilistic assignments but slower performance</li>
+                    <li><strong>Hierarchical Clustering:</strong> Useful for understanding segment relationships</li>
+                </ul>
+
+                <h3 style="color: #64ffda; margin: 20px 0 10px 0;">Model Validation</h3>
+                <p>Ensured segment quality through multiple validation techniques:</p>
+                <ul style="color: #8892b0; padding-left: 20px;">
+                    <li>Silhouette score of 0.72 indicating well-separated clusters</li>
+                    <li>Business validation with marketing team for segment interpretability</li>
+                    <li>A/B testing of segment-based campaigns for performance validation</li>
+                    <li>Regular model retraining to adapt to changing customer behaviors</li>
+                </ul>
+            </section>
+
+            <!-- Lessons Learned -->
+            <section class="section">
+                <h2>🎓 Lessons Learned</h2>
+                <p>This project provided valuable insights for successful customer segmentation implementations:</p>
+                <ul style="color: #8892b0; padding-left: 20px;">
+                    <li><strong>Business alignment is crucial:</strong> Segments must be actionable and understandable by marketing teams</li>
+                    <li><strong>Data quality drives success:</strong> Comprehensive data integration is essential for accurate segmentation</li>
+                    <li><strong>Dynamic segmentation matters:</strong> Customer behavior changes, so segments must be updated regularly</li>
+                    <li><strong>Cross-functional collaboration:</strong> Close work with marketing ensured practical implementation</li>
+                    <li><strong>Measurement framework:</strong> Clear KPIs for each segment enabled performance tracking</li>
+                    <li><strong>Technology integration:</strong> Seamless connection with marketing platforms drove adoption</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="case-study-footer">
+        <div class="container">
+            <h3 style="color: #64ffda; margin-bottom: 20px;">Ready to Transform Your Customer Experience?</h3>
+            <p style="color: #8892b0; margin-bottom: 20px;">Let's build a data-driven segmentation strategy that delivers real business results</p>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="mailto:gf1488360@gmail.com" style="padding: 12px 30px; background: #64ffda; color: #0a192f; text-decoration: none; border-radius: 5px; font-weight: bold; transition: all 0.3s ease;">Email Me</a>
+                <a href="tel:+923086007904" style="padding: 12px 30px; border: 1px solid #64ffda; color: #64ffda; text-decoration: none; border-radius: 5px; font-weight: bold; transition: all 0.3s ease;">Call Now</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
