@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Sales Dashboard - Case Study | Ghulam Farid Ibtisam</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: #0a192f;
+            color: #ccd6f6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .case-study-header {
+            background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
+            padding: 80px 0;
+            text-align: center;
+            border-bottom: 2px solid #64ffda;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #64ffda;
+            color: #0a192f;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
+        }
+
+        .case-study-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #64ffda, #00a8cc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            background: rgba(100, 255, 218, 0.1);
+            padding: 15px 25px;
+            border-radius: 8px;
+            border: 1px solid #64ffda;
+        }
+
+        .meta-value {
+            color: #64ffda;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .meta-label {
+            color: #8892b0;
+            font-size: 0.9rem;
+        }
+
+        .case-study-content {
+            padding: 60px 0;
+        }
+
+        .section {
+            background: #112240;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 4px solid #64ffda;
+        }
+
+        .section h2 {
+            color: #64ffda;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .section p {
+            color: #8892b0;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .metric-card {
+            background: #0a192f;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #64ffda;
+        }
+
+        .metric-value {
+            color: #64ffda;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .metric-label {
+            color: #8892b0;
+            font-size: 0.9rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .tech-tag {
+            background: #233554;
+            color: #64ffda;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .case-study-footer {
+            text-align: center;
+            padding: 40px 0;
+            background: #112240;
+            margin-top: 50px;
+        }
+
+        .dashboard-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .feature-card {
+            background: #0a192f;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #64ffda;
+        }
+
+        .feature-name {
+            color: #64ffda;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .feature-description {
+            color: #8892b0;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .architecture-diagram {
+            background: #0a192f;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border: 2px solid #64ffda;
+        }
+
+        .architecture-level {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 15px 0;
+            padding: 15px;
+            background: #112240;
+            border-radius: 8px;
+        }
+
+        .level-name {
+            color: #64ffda;
+            font-weight: bold;
+            min-width: 150px;
+        }
+
+        .level-components {
+            color: #8892b0;
+            flex: 1;
+            text-align: center;
+        }
+
+        .arrow {
+            color: #64ffda;
+            font-size: 1.5rem;
+            margin: 0 20px;
+        }
+
+        @media (max-width: 768px) {
+            .case-study-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .project-meta {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section {
+                padding: 25px;
+            }
+            
+            .dashboard-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .architecture-level {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .arrow {
+                transform: rotate(90deg);
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="case-study-header">
+        <div class="container">
+            <a href="../index.html" class="back-button">← Back to Portfolio</a>
+            <h1>Real-time Sales Performance Dashboard</h1>
+            <p style="color: #8892b0; font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
+                Enterprise Business Intelligence Platform for Data-Driven Sales Optimization
+            </p>
+            
+            <div class="project-meta">
+                <div class="meta-item">
+                    <div class="meta-value">Real-time</div>
+                    <div class="meta-label">Data Processing</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-value">18%</div>
+                    <div class="meta-label">Sales Increase</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-value">96%</div>
+                    <div class="meta-label">Time Savings</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-value">4 months</div>
+                    <div class="meta-label">Project Duration</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Case Study Content -->
+    <main class="case-study-content">
+        <div class="container">
+            <!-- Executive Summary -->
+            <section class="section">
+                <h2>📊 Executive Summary</h2>
+                <p>A national retail chain with 250+ stores across 15 states was operating with 3-week delayed sales reporting, causing missed opportunities and reactive decision-making. Regional managers lacked visibility into real-time performance metrics.</p>
+                <p>We designed and implemented a comprehensive real-time sales intelligence platform that processes 50,000+ transactions hourly, providing instant visibility into sales performance, inventory levels, and customer behavior across all locations.</p>
+                
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">250+</div>
+                        <div class="metric-label">Store Locations</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">50K+/hr</div>
+                        <div class="metric-label">Transactions</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">99.9%</div>
+                        <div class="metric-label">Uptime</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">$18M</div>
+                        <div class="metric-label">Revenue Impact</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Business Challenge -->
+            <section class="section">
+                <h2>🎯 Business Challenge</h2>
+                <p>The client, a major retail corporation with $2.8B in annual revenue, faced significant operational challenges due to outdated reporting systems:</p>
+                <ul style="color: #8892b0; padding-left: 20px; margin-bottom: 20px;">
+                    <li>3-week delay in sales performance reporting across 250+ stores</li>
+                    <li>120+ hours weekly spent on manual report generation by regional teams</li>
+                    <li>65% stockout rate for high-demand products due to poor inventory visibility</li>
+                    <li>Inability to identify underperforming stores in real-time</li>
+                    <li>Lack of unified view across online and brick-and-mortar sales channels</li>
+                    <li>Marketing campaigns couldn't be adjusted based on real-time performance</li>
+                    <li>Regional managers making decisions based on outdated information</li>
+                </ul>
+                <p>The existing fragmented systems included separate POS databases, Excel-based reporting, and manual data consolidation processes.</p>
+            </section>
+
+            <!-- Solution Architecture -->
+            <section class="section">
+                <h2>🏗️ Solution Architecture</h2>
+                <p>We built an enterprise-grade real-time analytics platform that integrates data from multiple sources and provides comprehensive sales intelligence through interactive dashboards.</p>
+                
+                <h3 style="color: #64ffda; margin: 20px 0 10px 0;">Technical Stack</h3>
+                <div class="tech-stack">
+                    <span class="tech-tag">Tableau</span>
+                    <span class="tech-tag">Power BI</span>
+                    <span class="tech-tag">SQL Server</span>
+                    <span class="tech-tag">Apache Kafka</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Azure Cloud</span>
+                    <span class="tech-tag">Data Warehousing</span>
+                    <span class="tech-tag">REST API</span>
+                </div>
+
+                <!-- Architecture Diagram -->
+                <div class="architecture-diagram">
+                    <h3 style="color: #64ffda; text-align: center; margin-bottom: 20px;">System Architecture</h3>
+                    
+                    <div class="architecture-level">
+                        <div class="level-name">Data Sources</div>
+                        <div class="level-components">POS Systems • eCommerce • CRM • Inventory • Weather API</div>
+                    </div>
+                    
+                    <div class="arrow">↓</div>
+                    
+                    <div class="architecture-level">
+                        <div class="level-name">Real-time Ingestion</div>
+                        <div class="level-components">Apache Kafka • Azure Event Hubs • Data Validation</div>
+                    </div>
+                    
+                    <div class="arrow">↓</div>
+                    
+                    <div class="architecture-level">
+                        <div class="level-name">Data Processing</div>
+                        <div class="level-components">ETL Pipelines • Data Cleansing • Feature Engineering</div>
+                    </div>
+                    
+                    <div class="arrow">↓</div>
+                    
+                    <div class="architecture-level">
+                        <div class="level-name">Data Warehouse</div>
+                        <div class="level-components">Star Schema • Aggregated Tables • Historical Data</div>
+                    </div>
+                    
+                    <div class="arrow">↓</div>
+                    
+                    <div class="architecture-level">
+                        <div class="level-name">Visualization</div>
+                        <div class="level-components">Tableau Dashboards • Power BI Reports • Mobile App</div>
+                    </div>
+                </div>
+
+                <h3 style="color: #64ffda; margin: 20px 0 10px 0;">Platform Components</h3>
+                <ul style="color: #8892b0; padding-left: 20px;">
+                    <li><strong>Real-time Data Pipeline:</strong> Processes 50,000+ transactions hourly with < 5-second latency</li>
+                    <li><strong>Unified Data Model:</strong> Star schema with 15 fact tables and 8 dimension tables</li>
+                    <li><strong>Interactive Dashboards:</strong> 12 different views for various business roles</li>
+                    <li><strong>Predictive Analytics:</strong> Machine learning models for sales forecasting and inventory optimization</li>
+                    <li><strong>Mobile Application:</strong> Real-time alerts and key metrics for field managers</li>
+                    <li><strong>Automated Reporting:</strong> Scheduled PDF reports for executives and stakeholders</li>
+                </ul>
+            </section>
+
+            <!-- Dashboard Features -->
+            <section class="section">
+                <h2>🎨 Dashboard Features & Capabilities</h2>
+                <p>The platform provides comprehensive sales intelligence through 12 interactive dashboards:</p>
+                
+                <div class="dashboard-features">
+                    <div class="feature-card">
+                        <div class="feature-name">📈 Executive Overview</div>
+                        <div class="feature-description">Real-time revenue, growth metrics, and performance against targets with drill-down to regional and store levels.</div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-name">🏪 Store Performance</div>
+                        <div class="feature-description">Comparative analysis of 250+ stores with performance rankings and improvement recommendations.</div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-name">📦 Inventory Intelligence</div>
+                        <div class="feature-description">Real-time stock levels, turnover rates, and automated reorder suggestions with demand forecasting.</div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-name">👥 Customer Analytics</div>
+                        <div class="feature-description">Customer segmentation, purchase patterns, and lifetime value analysis across channels.</div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-name">🎯 Product Performance</div>
+                        <div class="feature-description">Sales by product category, margin analysis, and cross-selling opportunities identification.</div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-name">🌍 Regional Analysis</div>
+                        <div class="feature-description">Geographic performance mapping, regional comparisons, and market penetration analysis.</div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-name">🕒 Time-based Analytics</div>
+                        <div class="feature-description">Hourly, daily, weekly, and seasonal patterns with anomaly detection and trend analysis.</div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-name">📱 Mobile Dashboard</div>
+                        <div class="feature-description">Essential metrics and alerts optimized for mobile devices with push notifications.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Implementation Details -->
+            <section class="section">
+                <h2>🔧 Implementation Details</h2>
+                
+                <h3 style="color: #64ffda; margin: 20px 0 10px 0;">Data Integration & Processing</h3>
+                <p>Built comprehensive data pipelines integrating 8 different data sources:</p>
+                <ul style="color: #8892b0; padding-left: 20px; margin-bottom: 15px;">
+                    <li><strong>POS Systems:</strong> Real-time transaction data from 250+ store locations</li>
+                    <li><strong>eCommerce Platform:</strong> Online sales, cart abandonment, and customer behavior</li>
+                    <li><strong>Inventory Management:</strong> Stock levels, supplier data, and warehouse information</li>
+                    <li><strong>CRM System:</strong> Customer profiles, loyalty program data, and service interactions</li>
+                    <li><strong>External APIs:</strong> Weather data, economic indicators, and competitor pricing</li>
+                    <li><strong>Marketing Platforms:</strong> Campaign performance and customer engagement metrics</li>
+                    <li><strong>Supply Chain Systems:</strong> Delivery schedules, logistics, and vendor performance</li>
+                    <li><strong>Financial Systems:</strong> Cost data, margins, and profitability metrics</li>
+                </ul>
+
+                <h3 style="color: #64ffda; margin: 20px 0 10px 0;">Real-time Processing Architecture</h3>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">< 5s</div>
+                        <div class="metric-label">Data Latency</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">99.9%</div>
+                        <div class="metric-label">Uptime SLA</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">1TB/day</div>
+                        <div class="metric-label">Data Processed</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">15+</div>
+                        <div class="metric-label">Data Sources</div>
+                    </div>
+                </div>
+
+                <h3 style="color: #64ffda; margin: 20px 0 10px 0;">Advanced Analytics Features</h3>
+                <ul style="color: #8892b0; padding-left: 20px;">
+                    <li><strong>Predictive Forecasting:</strong> 94% accurate sales predictions using time-series algorithms</li>
+                    <li><strong>Anomaly Detection:</strong> Automatic alerts for unusual sales patterns or system issues</li>
+                    <li><strong>Optimization Algorithms:</strong> Inventory optimization reducing stockouts by 78%</li>
+                    <li><strong>Machine Learning:</strong> Customer churn prediction and product recommendation engines</li>
+                    <li><strong>Natural Language Processing:</strong> Voice-enabled queries and automated insights generation</li>
+                </ul>
+            </section>
+
+            <!-- Business Impact -->
+            <section class="section">
+                <h2>💼 Business Impact</h2>
+                
+                <h3 style="color: #64ffda; margin: 20px 0 10px 0;">Operational Efficiency</h3>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">96%</div>
+                        <div class="metric-label">Time Savings</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">78%</div>
+                        <div class="metric-label">Stockout Reduction</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">45%</div>
+                        <div class="metric-label">Faster Decisions</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">200+</div>
+                        <div class="metric-label">Hours Saved Weekly</div>
+                    </div>
+                </div>
+
+                <h3 style="color: #64ffda; margin: 20px 0 10px 0;">Financial Performance</h3>
+                <ul style="color: #8892b0; padding-left: 20px;">
+                    <li><strong>Revenue Growth:</strong> 18% increase in same-store sales through data-driven optimizations</li>
+                    <li><strong>Cost Reduction:</strong> $2.3M annual savings from reduced manual reporting and improved inventory management</li>
+                    <li><strong>Margin Improvement:</strong> 4.2% increase in gross margins through better product mix optimization</li>
+                    <li><strong>Inventory Optimization:</strong> 28% reduction in excess inventory while maintaining 99% service levels</li>
+                    <li><strong>Labor Efficiency:</strong> 65% reduction in time spent on data collection and reporting tasks</li>
+                </ul>
+
+                <h3 style="color: #64ffda; margin: 20px 0 10px 0;">Strategic Outcomes</h3>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">$18M</div>
+                        <div class="metric-label">Revenue Impact</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">95%</div>
+                        <div class="metric-label">User Adoption</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">12</div>
+                        <div class="metric-label">New Locations</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">620%</div>
+                        <div class="metric-label">ROI</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- User Adoption & Training -->
+            <section class="section">
+                <h2>👥 User Adoption & Training</h2>
+                
+                <h3 style="color: #64ffda; margin: 20px 0 10px 0;">Change Management Strategy</h3>
+                <p>Implemented comprehensive training and support program ensuring 95% user adoption across 500+ employees:</p>
+                <ul style="color: #8892b0; padding-left: 20px; margin-bottom: 15px;">
+                    <li><strong>Role-based Training:</strong> Customized training programs for executives, regional managers, store managers, and analysts</li>
+                    <li><strong>Interactive Workshops:</strong> Hands-on sessions with real business scenarios and use cases</li>
+                    <li><strong>Video Tutorials:</strong> Comprehensive library of 45+ training videos covering all dashboard features</li>
+                    <li><strong>Help Desk Support:</strong> Dedicated support team with 15-minute response time SLA</li>
+                    <li><strong>User Community:</strong> Internal forum for sharing best practices and success stories</li>
+                </ul>
+
+                <h3 style="color: #64ffda; margin: 20px 0 10px 0;">Adoption Metrics</h3>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">95%</div>
+                        <div class="metric-label">Active Users</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">87%</div>
+                        <div class="metric-label">Daily Usage</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">4.8/5</div>
+                        <div class="metric-label">User Satisfaction</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">45+</div>
+                        <div class="metric-label">Training Videos</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technical Innovations -->
+            <section class="section">
+                <h2>🔬 Technical Innovations</h2>
+                
+                <h3 style="color: #64ffda; margin: 20px 0 10px 0;">Advanced Features</h3>
+                <p>Implemented cutting-edge technologies to enhance dashboard capabilities:</p>
+                <ul style="color: #8892b0; padding-left: 20px;">
+                    <li><strong>Real-time Stream Processing:</strong> Apache Kafka pipelines processing 50,000+ events hourly</li>
+                    <li><strong>Predictive Analytics:</strong> Machine learning models with 94% forecasting accuracy</li>
+                    <li><strong>Natural Language Query:</strong> Voice-enabled "ask data" functionality for business users</li>
+                    <li><strong>Automated Insights:</strong> AI-powered anomaly detection and trend identification</li>
+                    <li><strong>Mobile Optimization:</strong> Progressive web app with offline capabilities</li>
+                    <li><strong>Data Governance:</strong> Comprehensive security, access controls, and audit trails</li>
+                </ul>
+
+                <h3 style="color: #64ffda; margin: 20px 0 10px 0;">Performance Optimization</h3>
+                <ul style="color: #8892b0; padding-left: 20px;">
+                    <li>Dashboard load time optimized to < 3 seconds even with large datasets</li>
+                    <li>Implemented data aggregation and pre-computation for complex queries</li>
+                    <li>Used query optimization and indexing for sub-second response times</li>
+                    <li>Implemented caching layers for frequently accessed data</li>
+                    <li>Designed for horizontal scalability to support future growth</li>
+                </ul>
+            </section>
+
+            <!-- Lessons Learned -->
+            <section class="section">
+                <h2>🎓 Lessons Learned</h2>
+                <p>This enterprise dashboard implementation provided valuable insights for large-scale BI projects:</p>
+                <ul style="color: #8892b0; padding-left: 20px;">
+                    <li><strong>User-centric Design:</strong> Involving end-users early ensured adoption and practical utility</li>
+                    <li><strong>Data Quality Foundation:</strong> Comprehensive data governance is essential for trusted insights</li>
+                    <li><strong>Scalability Planning:</strong> Architecture must support both current needs and future growth</li>
+                    <li><strong>Change Management:</strong> Training and support are as important as technical implementation</li>
+                    <li><strong>Performance Optimization:</strong> User experience depends on fast response times</li>
+                    <li><strong>Mobile First:</strong> Field teams need mobile access to real-time data</li>
+                    <li><strong>Iterative Development:</strong> Regular feedback loops with users drive continuous improvement</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="case-study-footer">
+        <div class="container">
+            <h3 style="color: #64ffda; margin-bottom: 20px;">Ready to Build Your Real-time Analytics Platform?</h3>
+            <p style="color: #8892b0; margin-bottom: 20px;">Let's transform your data into actionable business intelligence</p>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="mailto:gf1488360@gmail.com" style="padding: 12px 30px; background: #64ffda; color: #0a192f; text-decoration: none; border-radius: 5px; font-weight: bold; transition: all 0.3s ease;">Email Me</a>
+                <a href="tel:+923086007904" style="padding: 12px 30px; border: 1px solid #64ffda; color: #64ffda; text-decoration: none; border-radius: 5px; font-weight: bold; transition: all 0.3s ease;">Call Now</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
