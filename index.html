@@ -359,6 +359,128 @@
                 gap: 20px;
             }
         }
+                /* === SERVICES SECTION === */
+        .services-section {
+            background: #0a192f;
+            padding: 100px 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .service-card {
+            background: #112240;
+            padding: 40px 30px;
+            border-radius: 15px;
+            border: 1px solid #233554;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: #64ffda;
+            box-shadow: 0 20px 40px rgba(100, 255, 218, 0.1);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #64ffda, #00a8cc);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            color: #ccd6f6;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: #8892b0;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .service-features {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .feature-tag {
+            background: rgba(100, 255, 218, 0.1);
+            color: #64ffda;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            border: 1px solid #64ffda;
+        }
+
+        .service-impact {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .impact-metric {
+            text-align: center;
+            flex: 1;
+        }
+
+        .impact-metric .metric-value {
+            color: #64ffda;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .impact-metric .metric-label {
+            color: #8892b0;
+            font-size: 0.8rem;
+        }
+
+        .services-cta {
+            text-align: center;
+            padding: 50px 0 0 0;
+            border-top: 1px solid #233554;
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-impact {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .service-card {
+                padding: 30px 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -658,6 +780,159 @@
                         <div class="skill-bar"><div class="skill-level" style="width: 90%;"></div></div>
                         <div class="skill-name">Management</div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- SERVICES SECTION -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title">Services Offered</h2>
+            <p style="text-align: center; color: #8892b0; font-size: 1.2rem; max-width: 800px; margin: 0 auto 3rem auto;">
+                Transforming Businesses Through Data Science and Strategic Consulting
+            </p>
+
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-icon">🚀</div>
+                    <h3>AI-Powered Business Strategy Design</h3>
+                    <p>Develop intelligent business strategies powered by machine learning and predictive analytics to drive competitive advantage and market leadership.</p>
+                    <div class="service-features">
+                        <span class="feature-tag">Strategic Planning</span>
+                        <span class="feature-tag">AI Integration</span>
+                        <span class="feature-tag">Market Analysis</span>
+                    </div>
+                    <div class="service-impact">
+                        <div class="impact-metric">
+                            <div class="metric-value">45%</div>
+                            <div class="metric-label">Faster Decisions</div>
+                        </div>
+                        <div class="impact-metric">
+                            <div class="metric-value">3.2x</div>
+                            <div class="metric-label">ROI Improvement</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-icon">💰</div>
+                    <h3>Data Monetization and Value Extraction</h3>
+                    <p>Transform raw data into revenue streams through advanced analytics, product development, and strategic partnerships.</p>
+                    <div class="service-features">
+                        <span class="feature-tag">Revenue Models</span>
+                        <span class="feature-tag">Product Development</span>
+                        <span class="feature-tag">Partnership Strategy</span>
+                    </div>
+                    <div class="service-impact">
+                        <div class="impact-metric">
+                            <div class="metric-value">$12.5M</div>
+                            <div class="metric-label">Revenue Generated</div>
+                        </div>
+                        <div class="impact-metric">
+                            <div class="metric-value">28%</div>
+                            <div class="metric-label">New Revenue Streams</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3>Intelligent Automation Consulting</h3>
+                    <p>Design and implement AI-driven automation solutions that optimize operations, reduce costs, and enhance customer experiences.</p>
+                    <div class="service-features">
+                        <span class="feature-tag">Process Automation</span>
+                        <span class="feature-tag">AI Implementation</span>
+                        <span class="feature-tag">Workflow Optimization</span>
+                    </div>
+                    <div class="service-impact">
+                        <div class="impact-metric">
+                            <div class="metric-value">65%</div>
+                            <div class="metric-label">Cost Reduction</div>
+                        </div>
+                        <div class="impact-metric">
+                            <div class="metric-value">85%</div>
+                            <div class="metric-label">Efficiency Gain</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-icon">📈</div>
+                    <h3>Advanced Forecasting and Trend Modeling</h3>
+                    <p>Leverage statistical modeling and machine learning to predict market trends, demand patterns, and business outcomes with high accuracy.</p>
+                    <div class="service-features">
+                        <span class="feature-tag">Predictive Analytics</span>
+                        <span class="feature-tag">Trend Analysis</span>
+                        <span class="feature-tag">Scenario Planning</span>
+                    </div>
+                    <div class="service-impact">
+                        <div class="impact-metric">
+                            <div class="metric-value">94%</div>
+                            <div class="metric-label">Accuracy Rate</div>
+                        </div>
+                        <div class="impact-metric">
+                            <div class="metric-value">30 days</div>
+                            <div class="metric-label">Early Warning</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <div class="service-icon">🎯</div>
+                    <h3>KPI Engineering and Insight Architecture</h3>
+                    <p>Design and implement comprehensive measurement frameworks that translate data into actionable business intelligence and strategic insights.</p>
+                    <div class="service-features">
+                        <span class="feature-tag">KPI Design</span>
+                        <span class="feature-tag">Dashboard Development</span>
+                        <span class="feature-tag">Performance Tracking</span>
+                    </div>
+                    <div class="service-impact">
+                        <div class="impact-metric">
+                            <div class="metric-value">96%</div>
+                            <div class="metric-label">Time Savings</div>
+                        </div>
+                        <div class="impact-metric">
+                            <div class="metric-value">40%</div>
+                            <div class="metric-label">Better Decisions</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Strategic Data Transformation Advisory</h3>
+                    <p>Guide organizations through digital transformation journeys, building data-driven cultures and modern analytics capabilities.</p>
+                    <div class="service-features">
+                        <span class="feature-tag">Digital Transformation</span>
+                        <span class="feature-tag">Change Management</span>
+                        <span class="feature-tag">Capability Building</span>
+                    </div>
+                    <div class="service-impact">
+                        <div class="impact-metric">
+                            <div class="metric-value">620%</div>
+                            <div class="metric-label">ROI Achieved</div>
+                        </div>
+                        <div class="impact-metric">
+                            <div class="metric-value">95%</div>
+                            <div class="metric-label">Adoption Rate</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="services-cta">
+                <h3 style="color: #64ffda; margin-bottom: 1rem;">Ready to Transform Your Business?</h3>
+                <p style="color: #8892b0; margin-bottom: 2rem;">Let's discuss how data science and strategic consulting can drive your business growth</p>
+                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                    <a href="#contact" class="btn btn-primary">Start Conversation</a>
+                    <a href="#projects" class="btn btn-secondary">View Case Studies</a>
                 </div>
             </div>
         </div>
