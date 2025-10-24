@@ -510,39 +510,70 @@
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(100, 255, 218, 0.3);
         }
+                /* === PROFILE PICTURE STYLES === */
+        .profile-picture {
+            margin-bottom: 2rem;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 3px solid #64ffda;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(100, 255, 218, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(100, 255, 218, 0.5);
+        }
     </style>
 </head>
 <body>
-    <!-- HERO SECTION -->
+       <!-- HERO SECTION -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>Ghulam Farid Ibtisam</h1>
-            <div class="professional-title">Data Scientist & Business Consultant</div>
-            
-            <div class="brand-pillars">
-                <div class="pillar">
-                    <div class="pillar-icon">🔮</div>
-                    <div class="pillar-title">Vision</div>
-                    <div class="pillar-desc">Strategic Insight</div>
-                </div>
-                <div class="pillar">
-                    <div class="pillar-icon">🧠</div>
-                    <div class="pillar-title">Logic</div>
-                    <div class="pillar-desc">Analytical Precision</div>
-                </div>
-                <div class="pillar">
-                    <div class="pillar-icon">⚡</div>
-                    <div class="pillar-title">Implementation</div>
-                    <div class="pillar-desc">Results-Driven</div>
+        <div class="hero-container">
+            <!-- Left: Profile Picture -->
+            <div class="hero-left">
+                <div class="profile-container">
+                    <img src="profile.jpg" 
+                         alt="Ghulam Farid Ibtisam" 
+                         class="profile-main">
+                    <div class="profile-glow"></div>
                 </div>
             </div>
             
-                        <div class="cta-buttons">
-                <a href="#projects" class="btn btn-primary">View My Projects</a>
-                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                <a href="#services" class="btn btn-primary">View My Services</a>
+            <!-- Right: Content -->
+            <div class="hero-right">
+                <h1>Ghulam Farid Ibtisam</h1>
+                <div class="professional-title">Data Scientist & Business Consultant</div>
+                
+                <div class="brand-pillars">
+                    <div class="pillar">
+                        <div class="pillar-icon">🔮</div>
+                        <div class="pillar-title">Vision</div>
+                        <div class="pillar-desc">Strategic Insight</div>
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-icon">🧠</div>
+                        <div class="pillar-title">Logic</div>
+                        <div class="pillar-desc">Analytical Precision</div>
+                    </div>
+                    <div class="pillar">
+                        <div class="pillar-icon">⚡</div>
+                        <div class="pillar-title">Implementation</div>
+                        <div class="pillar-desc">Results-Driven</div>
+                    </div>
+                </div>
+                
+                <div class="cta-buttons">
+                    <a href="#services" class="btn btn-primary">View Services</a>
+                    <a href="#projects" class="btn btn-secondary">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
             </div>
-        
         </div>
     </section>
 
